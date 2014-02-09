@@ -1,0 +1,63 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "92993f11cf379ccbd6e31027151b07ac",
+    "packages": [
+        {
+            "name": "comvi/curl",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/comvi/curl.git",
+                "reference": "83ecd5c0d2d58d5bbbfc58f9618fa37af384c4c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/comvi/curl/zipball/83ecd5c0d2d58d5bbbfc58f9618fa37af384c4c0",
+                "reference": "83ecd5c0d2d58d5bbbfc58f9618fa37af384c4c0",
+                "shasum": ""
+            },
+            "require": {
+                "lib-curl": ">=7.10.5",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Comvi\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Khoi Vu",
+                    "email": "o0khoiclub0o@gmail.com"
+                }
+            ],
+            "description": "Work with remote servers via cURL much easier than using the native PHP bindings.",
+            "keywords": [
+                "comvi",
+                "curl"
+            ],
+            "time": "2014-02-09 09:33:05"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "comvi/curl": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
