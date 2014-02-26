@@ -31,7 +31,7 @@ class REST
 
 	protected $server;
 	protected $ca_info;
-	protected $auth;
+	protected $auth = 'any';
 	protected $user;
 	protected $pass;
 
