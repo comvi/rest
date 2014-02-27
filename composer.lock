@@ -3,11 +3,11 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "92993f11cf379ccbd6e31027151b07ac",
+    "hash": "0bc786d1e0fec11759f2aa4fba7e9ffe",
     "packages": [
         {
             "name": "comvi/curl",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/comvi/curl.git",
@@ -51,9 +51,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "comvi/curl": 20
-    },
+    "stability-flags": [
+
+    ],
     "platform": [
 
     ],

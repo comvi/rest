@@ -13,6 +13,6 @@
         "psr-4": {"Comvi\\": ""}
     },
     "require": {
-        "comvi/curl": "dev-master"
+        "comvi/curl": "~1.0.0"
     }
 }
