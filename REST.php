@@ -6,23 +6,24 @@ namespace Comvi;
  *
  * Make REST requests to RESTful services with simple syntax.
  */
+
 class REST
 {
     protected $supported_formats = array(
-        'xml'                 => 'application/xml',
-        'json'                 => 'application/json',
+        'xml'               => 'application/xml',
+        'json'              => 'application/json',
         'serialize'         => 'application/vnd.php.serialized',
-        'php'                 => 'text/plain',
-        'csv'                => 'text/csv'
+        'php'               => 'text/plain',
+        'csv'               => 'text/csv'
     );
 
     protected $auto_detect_formats = array(
-        'application/xml'     => 'xml',
-        'text/xml'             => 'xml',
-        'application/json'     => 'json',
+        'application/xml'   => 'xml',
+        'text/xml'          => 'xml',
+        'application/json'  => 'json',
         'text/json'         => 'json',
-        'text/csv'             => 'csv',
-        'application/csv'     => 'csv',
+        'text/csv'          => 'csv',
+        'application/csv'   => 'csv',
         'application/vnd.php.serialized' => 'serialize'
     );
 
@@ -35,6 +36,7 @@ class REST
     protected $pass;
 
     protected $is_https = false;
+    protected $debug_mode = false;
 
     protected $format;
     protected $mime_type;
@@ -54,6 +56,7 @@ class REST
         isset($config['auth']) AND $this->auth = $config['auth'];
         isset($config['user']) AND $this->user = $config['user'];
         isset($config['pass']) AND $this->pass = $config['pass'];
+        isset($config['debug_mode']) AND $this->debug_mode = $config['debug_mode'];
 
         if (substr($this->server, 0, 5) === 'https') {
             $this->is_https = true;
@@ -107,6 +110,10 @@ class REST
             $this->curl->setLogin($this->user, $this->pass, $this->auth);
         }
 
+        if ($this->debug_mode === true) {
+            $this->curl->enableDebug();
+        }
+
         // We still want the response even if there is an error code over 400
         $this->curl->setOption('FailOnError', false);
 
@@ -136,6 +143,16 @@ class REST
     public function setHeader($name, $content = null)
     {
         $this->curl->setHeader($name, $content);
+    }
+
+    public function enableDebugMode()
+    {
+        $this->debug_mode = true;
+    }
+
+    public function disableDebugMode()
+    {
+        $this->debug_mode = false;
     }
 
     // If a type is passed in that is not supported, use it as a mime type
