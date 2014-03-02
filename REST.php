@@ -109,7 +109,7 @@ class REST
         }
 
         // We still want the response even if there is an error code over 400
-        //$this->curl->setOption('FailOnError', false);
+        $this->curl->setOption('FailOnError', false);
 
         // Call the correct method with parameters
         $response = $this->curl->{$method}($params);
